@@ -12,7 +12,6 @@ The simplest way to find all divisors of `N` is to iterate from `1` to `N` and c
 - **Space Complexity:** $O(1)$ (or $O(D)$ to store divisors)
 
 ### Optimized Approach 
-($O(\sqrt{N})$)
 Divisors always exist in pairs. If `D` is a divisor of `N`, then `N/D` is also a divisor. 
 One of these divisors in the pair will always be less than or equal to $\sqrt{N}$, and the other will be greater than or equal to $\sqrt{N}$. 
 Thus, we only need to iterate up to $\sqrt{N}$.
@@ -24,7 +23,6 @@ Thus, we only need to iterate up to $\sqrt{N}$.
 ---
 
 ## 3. Count of Divisors using Prime Factorization 
-($\tau(n)$)
 According to the Fundamental Theorem of Arithmetic, any integer `N` greater than 1 can be represented uniquely as a product of prime powers:
 $N = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}$
 
@@ -40,7 +38,6 @@ Number of divisors = $(2 + 1) \times (1 + 1) = 3 \times 2 = 6$.
 ---
 
 ## 4. Sum of Divisors Formula 
-($\sigma(n)$)
 Using the same prime factorization of `N`:
 $N = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}$
 
