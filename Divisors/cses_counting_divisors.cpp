@@ -1,10 +1,7 @@
 #include <iostream>
-
 using namespace std;
-
 const int MAX_X = 1e6 + 5;
 int spf[MAX_X];
-
 // Precompute Smallest Prime Factor (SPF) using Sieve
 // Time Complexity: O(MAX_X * log(log(MAX_X)))
 void sieve() {
