@@ -93,6 +93,9 @@ $$
 - The array elements can be up to $10^6$.
 - $n \le 2 \cdot 10^5$.
 
+**What should be the output?**
+Output a single integer representing the maximum possible GCD between any two elements in the array.
+
 **Approach:**
 1. **The Brute-force Issue:** A brute-force approach to find the GCD of all pairs would take $\mathcal{O}(N^2)$ time, which is too slow for $N = 2 \cdot 10^5$.
 2. **Reverse Thinking (Iterating over GCDs):** Instead of iterating over all pairs, we can iterate over all possible values of the GCD from the maximum possible element (e.g., $10^6$) down to $1$.
@@ -100,3 +103,61 @@ $$
 4. **Validating a GCD candidate:** For each candidate GCD, say $g$, we check how many elements in the array are multiples of $g$. We can do this by looping through all multiples of $g$ (i.e., $g, 2g, 3g, \dots$) and summing up their frequencies from the `count` array.
 5. **Finding the Maximum:** Since we iterate from the largest possible GCD down to $1$, the first $g$ we find that has at least $2$ multiples in our array is guaranteed to be the maximum possible GCD. We immediately output it and terminate.
 6. **Time Complexity:** The outer loop runs $M$ times (where $M = 10^6$ is the max element). The inner loop iterates $M/g$ times. The total number of inner loop iterations across all $g$ is $M \sum_{g=1}^M \frac{1}{g}$, which is a **harmonic series**. The sum of a harmonic series up to $M$ is bounded by $\mathcal{O}(\log M)$. Therefore, the overall time complexity is $\mathcal{O}(M \log M)$, which comfortably runs within the standard 1-second time limit!
+
+**Code:** [cses_common_divisors.cpp]
+
+---
+
+## 7. Problem: Left and Down (Grid Diagonal / Euclidean Path)
+
+**Problem Statement:** You have a grid of size $N \times M$. You draw a line from the top-left corner $(0,0)$ to the bottom-right corner $(N,M)$. Moving "Left and Down" through the coordinates, how many grid squares does this line pass through?
+- $1 \le N, M \le 10^{12}$
+
+**What should be the output?**
+Output a single integer representing the exact number of squares the line passes through.
+
+**Approach:**
+1. Imagine the line passing through a $1 \times 1$ grid. It passes through $1$ square.
+2. In a general $N \times M$ grid, every time the line crosses a vertical grid line, it enters a new square. It crosses $N-1$ vertical lines and $M-1$ horizontal lines.
+3. If it crosses a vertical and horizontal line at the exact same point (an intersection), it only enters one new square instead of two.
+4. The number of such intersections is exactly $\gcd(N, M) - 1$.
+5. The total squares passed through is $1 + (N-1) + (M-1) - (\gcd(N, M) - 1) = N + M - \gcd(N, M)$.
+
+**Code:** [left_and_down.cpp]
+
+---
+
+## 8. Problem: Insert and Equalize (Codeforces 1902C)
+
+**Problem Statement:** You are given an array of $N$ distinct integers. You must insert exactly one new integer (distinct from the others) into the array. Then, you can repeatedly add a chosen positive integer $x$ to any element to make all elements equal. Find the minimum number of operations to equalize the array.
+
+**What should be the output?**
+Output a single integer: the minimum number of operations to equalize the elements.
+
+**Approach:**
+1. To minimize operations, the step size $x$ should be as large as possible.
+2. If we equalize all elements to the maximum element $M$, the step size $x$ must evenly divide the difference $(M - A_i)$ for all $i$.
+3. Therefore, the optimal step size $x$ is the GCD of all differences: $x = \gcd(M - A_1, M - A_2, \dots, M - A_N)$.
+4. The operations for existing elements will be $\sum \frac{M - A_i}{x}$.
+5. For the inserted element, we should insert $M - x$, or if that exists, $M - 2x$, and so on. We pick the first available spot working downwards from $M$ to minimize its operations. If the array is dense, we might have to append $M + x$ instead, which takes $N$ operations. We take the minimum of both choices.
+
+**Code:** [insert_and_equalize.cpp]
+
+---
+
+## 9. Problem: Subset Multiplication (Count Subsets with GCD = 1)
+
+**Problem Statement:** Given an array of $N$ elements, find the number of non-empty subsets such that the GCD of the elements in the subset is exactly $1$. Since the answer can be large, output it modulo $10^9+7$.
+
+**What should be the output?**
+Output the number of valid subsets modulo $10^9+7$.
+
+**Approach (Inclusion-Exclusion Principle):**
+1. Let $dp[i]$ be the number of subsets with a GCD of exactly $i$.
+2. To find $dp[i]$, we first count how many elements in the array are multiples of $i$. Let this be $cnt$.
+3. The number of subsets where all elements are multiples of $i$ is $2^{cnt} - 1$.
+4. However, these subsets could have a GCD of $i, 2i, 3i, \dots$. So, we must subtract the subsets that have a strictly larger GCD which is a multiple of $i$.
+5. $dp[i] = (2^{cnt} - 1) - \sum_{k=2} dp[k \cdot i]$.
+6. We evaluate this from the maximum element down to $1$. Finally, $dp[1]$ contains the final answer.
+
+**Code:** [subset_multiplication_gcd.cpp]
