@@ -1,7 +1,7 @@
 # Modular Arithmetic Explained for Competitive Programming
 
 ## What is Modular Arithmetic?
-Modular arithmetic (often called "clock arithmetic") is a system of arithmetic for integers, where numbers "wrap around" upon reaching a certain value—the **modulus**. 
+Modular arithmetic (often called "clock arithmetic") is a system of arithmetic for integers, where numbers "wrap around" upon reaching a certain value the **modulus**. 
 
 In C++, the modulo operator is `%`. However, mathematical modulo and C++ `%` differ slightly when dealing with negative numbers (more on this below).
 
