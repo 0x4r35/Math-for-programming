@@ -57,52 +57,25 @@ $$
 
 ### GCD Properties:
 
-1. **Commutativity:** 
-   $$
-   \gcd(a, b) = \gcd(b, a)
-   $$
-2. **Associativity:** 
-   $$
-   \gcd(a, \gcd(b, c)) = \gcd(\gcd(a, b), c)
-   $$
-3. **Distributivity:** 
-   $$
-   \gcd(m \cdot a, m \cdot b) = m \cdot \gcd(a, b)
-   $$
-4. **GCD of multiple numbers:** 
-   $$
-   \gcd(a, b, c) = \gcd(\gcd(a, b), c)
-   $$
-5. **Consecutive integers:** 
-   $$
-   \gcd(a, a+1) = 1 \text{ (They are always co-prime)}
-   $$
+1. **Commutativity:** $\gcd(a, b) = \gcd(b, a)$
+2. **Associativity:** $\gcd(a, \gcd(b, c)) = \gcd(\gcd(a, b), c)$
+3. **Distributivity:** $\gcd(m \cdot a, m \cdot b) = m \cdot \gcd(a, b)$
+4. **GCD of multiple numbers:** $\gcd(a, b, c) = \gcd(\gcd(a, b), c)$
+5. **Consecutive integers:** $\gcd(a, a+1) = 1$ (They are always co-prime)
 6. **Prime properties:** If $p$ is a prime number, then $\gcd(p, a) = p$ if $p$ divides $a$, otherwise $\gcd(p, a) = 1$.
 
 ### LCM Properties:
 
-1. **Commutativity:** 
-   $$
-   \text{lcm}(a, b) = \text{lcm}(b, a)
-   $$
-2. **Associativity:** 
-   $$
-   \text{lcm}(a, \text{lcm}(b, c)) = \text{lcm}(\text{lcm}(a, b), c)
-   $$
-3. **LCM of multiple numbers:** 
-   $$
-   \text{lcm}(a, b, c) = \text{lcm}(\text{lcm}(a, b), c)
-   $$
-4. **Co-prime property:** If $\gcd(a, b) = 1$ (i.e., $a$ and $b$ are co-prime), then:
-   $$
-   \text{lcm}(a, b) = a \cdot b
-   $$
+1. **Commutativity:** $\text{lcm}(a, b) = \text{lcm}(b, a)$
+2. **Associativity:** $\text{lcm}(a, \text{lcm}(b, c)) = \text{lcm}(\text{lcm}(a, b), c)$
+3. **LCM of multiple numbers:** $\text{lcm}(a, b, c) = \text{lcm}(\text{lcm}(a, b), c)$
+4. **Co-prime property:** If $\gcd(a, b) = 1$ (i.e., $a$ and $b$ are co-prime), then $\text{lcm}(a, b) = a \cdot b$
 
 ---
 
 ## 5. Advanced / Competitive Programming Tricks
 
-- **GCD of an array:** To find the GCD of an array $A = [a_1, a_2, \dots, a_n]$, you can iteratively compute $\gcd(A[i], \text{current\_gcd})$. You can break early if the running GCD becomes $1$, as it cannot be reduced further.
+- **GCD of an array:** To find the GCD of an array $A = [a_1, a_2, \dots, a_n]$, you can iteratively compute $\gcd(A[i], \text{current GCD})$. You can break early if the running GCD becomes $1$, as it cannot be reduced further.
   
 - **Subsegment GCD:** The number of distinct GCDs of all possible subarrays starting at a specific index in an array of size $N$ is bounded by $\mathcal{O}(\log(\max A_i))$. This allows efficient usage of Data Structures like Segment Trees or Sparse Tables to answer range GCD queries in $\mathcal{O}(\log(\max A_i))$ or even $\mathcal{O}(1)$ time.
   
