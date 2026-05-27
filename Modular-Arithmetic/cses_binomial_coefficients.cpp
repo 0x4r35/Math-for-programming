@@ -29,7 +29,7 @@ void precompute() {
     for (int i = 1; i <= MAXN; ++i) {
         fact[i] = (fact[i - 1] * i) % MOD;
     }
-    
+
     invFact[MAXN] = modInverse(fact[MAXN]);
     for (int i = MAXN - 1; i >= 1; --i) {
         invFact[i] = (invFact[i + 1] * (i + 1)) % MOD;
@@ -46,9 +46,9 @@ long long nCr(int n, int r) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     precompute();
-    
+
     int n;
     if (cin >> n) {
         while (n--) {

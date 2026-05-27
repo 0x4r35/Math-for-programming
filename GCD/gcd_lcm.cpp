@@ -21,20 +21,20 @@ long long extended_gcd(long long a, long long b, long long& x, long long& y) {
         x = 1;
         y = 0;
         return a;
-    }   
+    }
     long long x1, y1;
-    long long d = extended_gcd(b, a % b, x1, y1);    
+    long long d = extended_gcd(b, a % b, x1, y1);
     x = y1;
-    y = x1 - y1 * (a / b);    
+    y = x1 - y1 * (a / b);
     return d;
 }
 long long array_gcd(const vector<long long>& arr) {
     if (arr.empty()) return 0;
     long long result = arr[0];
-    
+
     for (size_t i = 1; i < arr.size(); ++i) {
         result = gcd_iterative(result, arr[i]);
-        if (result == 1) { 
+        if (result == 1) {
             return 1;
         }
     }
@@ -43,7 +43,7 @@ long long array_gcd(const vector<long long>& arr) {
 long long array_lcm(const vector<long long>& arr) {
     if (arr.empty()) return 0;
     long long result = arr[0];
-    
+
     for (size_t i = 1; i < arr.size(); ++i) {
         result = lcm_custom(result, arr[i]);
     }

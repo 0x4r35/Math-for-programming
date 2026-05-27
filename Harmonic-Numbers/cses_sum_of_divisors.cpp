@@ -26,18 +26,18 @@ long long sum_in_range(long long l, long long r) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     long long n;
     if (!(cin >> n)) return 0;
 
     long long total_sum = 0;
-    
+
     for (long long l = 1, r; l <= n; l = r + 1) {
         long long q = n / l;
         r = n / q;
-        
+
         long long range_sum = sum_in_range(l, r);
-        
+
         long long term = (range_sum * (q % MOD)) % MOD;
         total_sum = (total_sum + term) % MOD;
     }

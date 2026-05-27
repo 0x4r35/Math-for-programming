@@ -18,12 +18,12 @@ long long power(long long base, long long exp) {
 void solve() {
     long long n;
     cin >> n;
-    
+
     if (n < 3) {
         cout << n << "\n";
         return;
     }
-    
+
     if (n % 3 == 0) {
         cout << power(3, n / 3) << "\n";
     } else if (n % 3 == 1) {
@@ -36,7 +36,7 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int t;
     if (cin >> t) {
         while (t--) {

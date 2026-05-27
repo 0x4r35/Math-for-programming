@@ -44,7 +44,7 @@ void fft(vector<cd> & a, bool invert) {
 vector<long long> multiply(vector<long long> const& a, vector<long long> const& b) {
     vector<cd> fa(a.begin(), a.end()), fb(b.begin(), b.end());
     int n = 1;
-    while (n < a.size() + b.size()) 
+    while (n < a.size() + b.size())
         n <<= 1;
     fa.resize(n); fb.resize(n);
 

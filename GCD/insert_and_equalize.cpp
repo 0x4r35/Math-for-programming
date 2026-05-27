@@ -16,7 +16,7 @@ long long gcd(long long a, long long b) {
 void solve() {
     int n;
     if (!(cin >> n)) return;
-    
+
     vector<long long> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
@@ -29,7 +29,7 @@ void solve() {
 
     sort(a.begin(), a.end());
     long long g = 0;
-    
+
     for (int i = 0; i < n - 1; i++) {
         g = gcd(g, a[n - 1] - a[i]);
     }
@@ -42,7 +42,7 @@ void solve() {
     long long curr = a[n - 1];
     set<long long> s(a.begin(), a.end());
     long long added_cost = 0;
-    
+
     while (true) {
         curr -= g;
         added_cost++;
@@ -50,7 +50,7 @@ void solve() {
             break;
         }
     }
-    
+
     ans += min(added_cost, (long long)n);
     cout << ans << "\n";
 }
@@ -58,7 +58,7 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int t;
     if (cin >> t) {
         while (t--) {

@@ -18,13 +18,13 @@ long long binpow(long long base, long long exp, long long mod) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n;
     if (cin >> n) {
         while (n--) {
             long long a, b, c;
             cin >> a >> b >> c;
-            
+
             long long power_bc = binpow(b, c, MOD - 1);
             cout << binpow(a, power_bc, MOD) << "\n";
         }

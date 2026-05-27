@@ -26,7 +26,7 @@ int main() {
 
     int max_val = 0;
     vector<int> freq(1000005, 0);
-    
+
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
@@ -41,13 +41,13 @@ int main() {
         for (int j = i; j <= max_val; j += i) {
             count_multiples += freq[j];
         }
-        
+
         long long subsets = (power(2, count_multiples) - 1 + MOD) % MOD;
-        
+
         for (int j = 2 * i; j <= max_val; j += i) {
             subsets = (subsets - dp[j] + MOD) % MOD;
         }
-        
+
         dp[i] = subsets;
     }
 

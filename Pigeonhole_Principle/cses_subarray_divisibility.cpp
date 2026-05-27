@@ -25,7 +25,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         prefix_sum += a[i];
         long long rem = ((prefix_sum % n) + n) % n;
-        
+
         ans += remainder_count[rem];
         remainder_count[rem]++;
     }

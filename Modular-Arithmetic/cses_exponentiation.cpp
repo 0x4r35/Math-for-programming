@@ -17,7 +17,7 @@ long long power(long long base, long long exp, long long mod) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n;
     if (cin >> n) {
         while (n--) {

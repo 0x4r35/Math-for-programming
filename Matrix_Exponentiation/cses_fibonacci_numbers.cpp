@@ -49,7 +49,7 @@ int main() {
 
     Matrix T = {{1, 1}, {1, 0}};
     T = power(T, n - 1);
-    
+
     long long ans = T[0][0];
     cout << ans << "\n";
 
