@@ -1,3 +1,4 @@
+// Problem Name: Subset Multiplication Gcd
 #include <iostream>
 #include <vector>
 #include <algorithm>

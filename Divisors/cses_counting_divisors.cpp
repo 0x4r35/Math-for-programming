@@ -1,3 +1,4 @@
+// Problem Name: CSES Counting Divisors
 #include <iostream>
 using namespace std;
 const int MAX_X = 1e6 + 5;

@@ -1,3 +1,4 @@
+// Problem Name: Count Good Numbers
 #include <iostream>
 
 using namespace std;

@@ -1,3 +1,4 @@
+// Problem Name: CSES Common Divisors
 #include <iostream>
 #include <vector>
 #include <algorithm>
