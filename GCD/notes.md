@@ -11,7 +11,9 @@ The Euclidean algorithm is a highly efficient method for computing the GCD of tw
 **Equation:**
 
 $$
+
 \gcd(a, b) = \begin{cases} a & \text{if } b = 0 \\ \gcd(b, a \bmod b) & \text{if } b \neq 0 \end{cases}
+
 $$
 
 **Time Complexity:** $\mathcal{O}(\log(\min(a, b)))$
@@ -21,7 +23,9 @@ $$
 The Extended Euclidean Algorithm not only finds the GCD of $a$ and $b$, but also finds integer coefficients $x$ and $y$ such that:
 
 $$
+
 a \cdot x + b \cdot y = \gcd(a, b)
+
 $$
 
 This equation is known as **Bézout's identity**. This is incredibly useful for finding modular multiplicative inverses and solving linear Diophantine equations.
@@ -39,13 +43,17 @@ The Least Common Multiple of two integers $a$ and $b$ (denoted as $\text{lcm}(a,
 There is a fundamental relationship between the GCD and LCM of two numbers $a$ and $b$:
 
 $$
+
 a \cdot b = \gcd(a, b) \cdot \text{lcm}(a, b)
+
 $$
 
 Thus, we can calculate LCM efficiently using the GCD:
 
 $$
+
 \text{lcm}(a, b) = \frac{a \cdot b}{\gcd(a, b)}
+
 $$
 
 > [!TIP]

@@ -10,15 +10,19 @@ Since matrix multiplication is associative, we can compute $M^N$ efficiently usi
 ## 1. Linear Recurrences
 
 Any linear recurrence of the form:
+
 $$ f(n) = c_1f(n-1) + c_2f(n-2) + \dots + c_kf(n-k) $$
+
 can be represented as a matrix multiplication.
 
 ### Example: Fibonacci Numbers
 The Fibonacci sequence: $F(n) = F(n-1) + F(n-2)$, with $F(0) = 0, F(1) = 1$.
 We can express this as:
+
 $$ \begin{bmatrix} F(n) \\ F(n-1) \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} F(n-1) \\ F(n-2) \end{bmatrix} $$
 
 To find $F(n)$, we raise the transition matrix to the $(n-1)$-th power:
+
 $$ \begin{bmatrix} F(n) \\ F(n-1) \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}^{n-1} \begin{bmatrix} F(1) \\ F(0) \end{bmatrix} $$
 
 ## 2. Paths in a Graph

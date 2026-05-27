@@ -2,12 +2,15 @@
 
 ## What are Harmonic Numbers?
 The $n$-th harmonic number, denoted as $H_n$, is the sum of the reciprocals of the first $n$ natural numbers:
+
 $$H_n = 1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n} = \sum_{i=1}^n \frac{1}{i}$$
 
 ## Convergent and Divergent Series
 - **Divergence:** The harmonic series diverges to infinity as $n \to \infty$. Even though the terms get progressively smaller, they do not get smaller fast enough for the series to converge to a finite limit.
 - **Approximation:** For large $n$, $H_n$ can be closely approximated as:
+
   $$H_n \approx \ln(n) + \gamma$$
+
   where $\gamma \approx 0.5772156649$ is the Euler-Mascheroni constant.
 
 ## Why Harmonic Numbers Matter in C++ (Competitive Programming)

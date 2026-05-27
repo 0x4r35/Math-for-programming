@@ -8,6 +8,7 @@ The idea revolves around the binary representation of the exponent.
 For example, to compute $3^{13}$:
 The number $13$ in binary is $1101_2$, which means $13 = 8 + 4 + 1$.
 Therefore: 
+
 $$3^{13} = 3^{8 + 4 + 1} = 3^8 \times 3^4 \times 3^1$$
 
 Instead of multiplying $3$ by itself $13$ times, we repeatedly square the base:

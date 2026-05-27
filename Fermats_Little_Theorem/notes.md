@@ -2,26 +2,33 @@
 
 ## What is Fermat's Little Theorem?
 Fermat's Little Theorem (FLT) states that if $P$ is a prime number, then for any integer $A$ that is not divisible by $P$:
+
 $$A^{P-1} \equiv 1 \pmod P$$
 
 Alternatively, stated in a way that applies to any integer $A$:
+
 $$A^P \equiv A \pmod P$$
 
 ## Full Intuition and Proof
 Consider a prime modulus $P$. The set of all non-zero remainders modulo $P$ is: 
+
 $$S = \{1, 2, 3, \dots, P-1\}$$
 
 If we pick an integer $A$ (which is coprime to $P$) and multiply every element in $S$ by $A$, we generate a new set:
+
 $$S' = \{A \cdot 1, A \cdot 2, A \cdot 3, \dots, A \cdot (P-1)\}$$
 
 Because $P$ is a prime and $\gcd(A, P) = 1$, all elements in $S'$ will leave **distinct** remainders modulo $P$, and none of them will leave a remainder of $0$.
 Therefore, the remainders of the elements in $S'$ are simply a permutation (a reordering) of the elements in $S$.
 
 If we multiply all the elements in $S$ together, the product must be congruent to the product of all elements in $S'$ modulo $P$:
+
 $$(1 \cdot 2 \dots (P-1)) \equiv (A \cdot 1) \cdot (A \cdot 2) \dots (A \cdot (P-1)) \pmod P$$
+
 $$(P-1)! \equiv A^{P-1} \cdot (P-1)! \pmod P$$
 
 Since $(P-1)!$ is completely coprime to $P$, we can cancel it out from both sides, leaving the core theorem:
+
 $$1 \equiv A^{P-1} \pmod P$$
 
 ---
@@ -31,15 +38,19 @@ The primary and most crucial use of Fermat's Little Theorem in Competitive Progr
 
 When calculating combinations like $nCr = \frac{n!}{r!(n-r)!}$, we must perform division modulo $P$.
 We know that division modulo $P$ is mathematically equivalent to multiplying by the inverse: 
+
 $$A / B \equiv A \cdot B^{-1} \pmod P$$
 
 From FLT, we know:
+
 $$B^{P-1} \equiv 1 \pmod P$$
 
 We can split one $B$ out from the exponent:
+
 $$B \cdot B^{P-2} \equiv 1 \pmod P$$
 
 By the strict mathematical definition of an inverse ($B \cdot B^{-1} \equiv 1$), it becomes obvious that:
+
 $$B^{-1} \equiv B^{P-2} \pmod P$$
 
 ### C++ Code for Modular Inverse

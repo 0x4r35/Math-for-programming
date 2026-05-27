@@ -6,7 +6,9 @@ Probability and Expected Value frequently appear in Dynamic Programming (DP) pro
 
 The probability of an event $A$ is denoted by $P(A)$ and is always $0 \le P(A) \le 1$.
 For independent events $A$ and $B$:
+
 $$ P(A \text{ and } B) = P(A) \times P(B) $$
+
 $$ P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B) $$
 
 ### Probability DP
@@ -17,11 +19,13 @@ Since probabilities sum up to 1 over all mutually exclusive and exhaustive outco
 ## Expected Value
 
 The Expected Value (or mathematical expectation) of a random variable $X$, denoted by $E[X]$, is the sum of all possible values of $X$ multiplied by their respective probabilities:
+
 $$ E[X] = \sum_{x} x \cdot P(X = x) $$
 
 ### Linearity of Expectation (Crucial!)
 One of the most important properties in CP is the Linearity of Expectation.
 For any two random variables $X$ and $Y$ (even if they are **dependent**!):
+
 $$ E[X + Y] = E[X] + E[Y] $$
 
 This allows us to break down complex expected value problems into sums of simple expectations.
@@ -29,7 +33,9 @@ This allows us to break down complex expected value problems into sums of simple
 ### Expected Value DP
 Expected Value DP usually works **backwards**. 
 If `dp[i]` is the expected number of steps to reach the end from state $i$:
+
 $$ \text{dp}[i] = 1 + \sum_{j} P(i \to j) \times \text{dp}[j] $$
+
 We define the base case at the end state, e.g., $\text{dp}[N] = 0$, and work backwards to $\text{dp}[1]$.
 
 ## Reference Problems & Solutions

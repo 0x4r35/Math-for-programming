@@ -4,15 +4,18 @@ The "Stars and Bars" method is a graphical aid for deriving certain combinatoria
 
 ## Theorem 1 (Positive Integers)
 The number of ways to put $n$ indistinguishable items into $k$ distinguishable boxes such that **every box receives at least one item** is:
+
 $$ \binom{n-1}{k-1} $$
 
 **Intuition:** Imagine $n$ items (stars) in a line. There are $n-1$ spaces between them. To divide them into $k$ groups, we need to place $k-1$ dividers (bars) into these $n-1$ spaces.
 
 ## Theorem 2 (Non-negative Integers)
 The number of ways to put $n$ indistinguishable items into $k$ distinguishable boxes where **boxes can be empty** is:
+
 $$ \binom{n+k-1}{k-1} $$
 
 **Intuition:** Add a "dummy" item to each of the $k$ boxes. Now we are distributing $n+k$ items into $k$ boxes such that each box has at least one item. By Theorem 1, this is:
+
 $$ \binom{(n+k)-1}{k-1} = \binom{n+k-1}{k-1} $$
 
 ## Typical CP Problem: Distributing Apples

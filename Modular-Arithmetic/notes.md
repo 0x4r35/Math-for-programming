@@ -7,27 +7,35 @@ In C++, the modulo operator is `%`. However, mathematical modulo and C++ `%` dif
 
 ## Congruence Modulo $M$
 Two integers $a$ and $b$ are said to be **congruent modulo $m$**, written as:
+
 $$a \equiv b \pmod m$$
+
 if their difference $(a - b)$ is an integer multiple of $m$, or equivalently, they leave the exact same remainder when divided by $m$.
 
 ## Fundamental Properties
 If we are working modulo $M$, the following properties hold. These are absolutely essential in CP to avoid integer overflow when dealing with very large calculations.
 
 ### 1. Addition
+
 $$(A + B) \pmod M = ((A \pmod M) + (B \pmod M)) \pmod M$$
 
 ### 2. Subtraction
 In C++, the `%` operator on a negative number returns a negative result (e.g., `-5 % 3 = -2`). In mathematics, modulo should always be positive. The correct way to subtract modulo $M$ is:
+
 $$(A - B) \pmod M = ((A \pmod M) - (B \pmod M) + M) \pmod M$$
+
 *Note: We add $M$ before the final modulo to ensure the result wraps into the strict non-negative range $[0, M-1]$.*
 
 ### 3. Multiplication
+
 $$(A \times B) \pmod M = ((A \pmod M) \times (B \pmod M)) \pmod M$$
+
 *Warning: Even if $A \pmod M$ and $B \pmod M$ fit in a 32-bit `int`, their product might not. Always cast to `long long` (or `1LL * A * B`) before multiplying!*
 
 ### 4. Division
 You **CANNOT** just divide and then take modulo: $(A / B) \pmod M \neq ((A \pmod M) / (B \pmod M)) \pmod M$.
 Instead, you must multiply by the **Modular Multiplicative Inverse** of $B$:
+
 $$(A / B) \pmod M = ((A \pmod M) \times B^{-1}) \pmod M$$
 
 ---
@@ -56,9 +64,13 @@ The inverse only exists if $\gcd(B, M) = 1$ (they are coprime).
 
 **Fermat's Little Theorem:**
 If $M$ is a prime number (like $10^9+7$), then:
+
 $$B^{M-1} \equiv 1 \pmod M$$
+
 Dividing both sides by $B$:
+
 $$B \times B^{M-2} \equiv 1 \pmod M \implies B^{-1} \equiv B^{M-2} \pmod M$$
+
 So, you can find the inverse using the modular exponentiation function!
 
 ```cpp

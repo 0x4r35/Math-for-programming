@@ -5,6 +5,7 @@ Combinatorics forms the foundation of counting in competitive programming. We of
 ## Factorials
 
 The number of ways to arrange $N$ distinct items is $N!$ (N factorial).
+
 $$ N! = N \times (N-1) \times \dots \times 1 $$
 
 In CP, we usually precompute factorials up to $N = 10^6$ in $O(N)$ time.
@@ -22,16 +23,19 @@ void precompute() {
 ## Permutations ($^nP_r$)
 
 The number of ways to choose and arrange $r$ elements out of $n$ distinct elements.
+
 $$ ^nP_r = \frac{n!}{(n-r)!} $$
 
 ## Combinations ($^nC_r$ or $\binom{n}{r}$)
 
 The number of ways to choose $r$ elements out of $n$ distinct elements (order does not matter).
+
 $$ \binom{n}{r} = \frac{n!}{r!(n-r)!} $$
 
 ### Computing $\binom{n}{r}$ with Modular Arithmetic
 
 Since division under a modulo requires the modular multiplicative inverse (using Fermat's Little Theorem):
+
 $$ \binom{n}{r} \equiv n! \times (r!)^{-1} \times ((n-r)!)^{-1} \pmod M $$
 
 ```cpp
@@ -46,6 +50,7 @@ long long nCr(int n, int r) {
 ## Permutations with Repetitions (Multinomial Coefficients)
 
 If we have $N$ items, where item 1 repeats $c_1$ times, item 2 repeats $c_2$ times, ..., and item $k$ repeats $c_k$ times, the number of distinct permutations is:
+
 $$ \frac{N!}{c_1! \times c_2! \times \dots \times c_k!} $$
 
 This is extremely common in string permutation problems.

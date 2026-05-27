@@ -24,15 +24,19 @@ Thus, we only need to iterate up to $\sqrt{N}$.
 
 ## 3. Count of Divisors using Prime Factorization 
 According to the Fundamental Theorem of Arithmetic, any integer `N` greater than 1 can be represented uniquely as a product of prime powers:
+
 $$N = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}$$
 
 The number of divisors, often denoted as $\tau(N)$ or $d(N)$, can be found by adding 1 to each exponent and multiplying them together:
 
 **Formula:** 
+
 $$\tau(N) = (a_1 + 1) \times (a_2 + 1) \times \dots \times (a_k + 1)$$
 
 **Example:**
+
 $$12 = 2^2 \times 3^1$$
+
 Number of divisors = $(2 + 1) \times (1 + 1) = 3 \times 2 = 6$.
 
 *See [prime_factorization_divisors.cpp] for implementation.*
@@ -41,11 +45,13 @@ Number of divisors = $(2 + 1) \times (1 + 1) = 3 \times 2 = 6$.
 
 ## 4. Sum of Divisors Formula 
 Using the same prime factorization of `N`:
+
 $$N = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}$$
 
 The sum of all divisors, denoted as $\sigma(N)$, is calculated using the formula for the sum of a geometric progression for each prime factor:
 
 **Formula:** 
+
 $$\sigma(N) = \left(\frac{p_1^{a_1+1} - 1}{p_1 - 1}\right) \times \left(\frac{p_2^{a_2+1} - 1}{p_2 - 1}\right) \times \dots \times \left(\frac{p_k^{a_k+1} - 1}{p_k - 1}\right)$$
 
 *See [prime_factorization_divisors.cpp] for implementation.*
@@ -59,6 +65,7 @@ Since divisors come in pairs that multiply to `N` (e.g., $d$ and $N/d$), we can 
 If there are $\tau(N)$ divisors, there are $\tau(N)/2$ pairs.
 
 **Formula:** 
+
 $$P(N) = N^{\frac{\tau(N)}{2}}$$
 
 > **Note:** If $N$ is a perfect square, $\tau(N)$ is odd, so $\tau(N)/2$ is a fraction, but $N^{\frac{1}{2}}$ is just $\sqrt{N}$, an integer. So it simplifies nicely to $(\sqrt{N})^{\tau(N)}$. In CP, you often have to calculate this modulo $10^9+7$, requiring careful application of Fermat's Little Theorem for the exponent.
