@@ -76,3 +76,8 @@ Since $A^X \equiv A^{X \pmod{P-1}} \pmod P$, you can safely calculate the expone
 
 ### 3. Fermat Primality Test
 FLT can be used in reverse to check if a number is prime. If you pick a random $A$ and $A^{P-1} \not\equiv 1 \pmod P$, then $P$ is **definitely composite**. If it does equal $1$, $P$ is *probably* prime. This forms the mathematical basis for fast probabilistic primality testing (like the Miller-Rabin test).
+
+## Reference Problems & Solutions
+
+### [CSES Exponentiation II](https://cses.fi/problemset/task/1712)
+**Approach**: By Fermat's Little Theorem, we know that $a^{p-1} \equiv 1 \pmod p$ for a prime $p$. Because of this cyclic nature, the exponent itself repeats every $p-1$ times. Therefore, $a^{b^c} \pmod p \equiv a^{(b^c \pmod{p-1})} \pmod p$. Since $p = 10^9+7$, we first calculate $X = b^c \pmod{10^9+6}$. Then we calculate $a^X \pmod{10^9+7}$.

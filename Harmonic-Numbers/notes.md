@@ -65,7 +65,7 @@ for (long long l = 1, r; l <= n; l = r + 1) {
 
 ## Problems & Applications
 
-### 1. Codeforces - We Were Both Children (1850F)
+### 1. [Codeforces 1850F - We Were Both Children](https://codeforces.com/problemset/problem/1850/F)
 **Concept:** Frogs jump in lengths of $a_i$. We want to find the coordinate where the maximum number of frogs land.
 **Idea:** Instead of simulating each frog, count the frequency of jump lengths. Then, for each jump length $i$, add its frequency to all its multiples (the spots it lands on). Since the inner loop increments by $i$, the time complexity is governed by the harmonic series $\sum \frac{n}{i} = O(N \log N)$.
 
@@ -82,7 +82,7 @@ for (int i = 1; i <= N; ++i) {
 // Time Complexity: O(N log N)
 ```
 
-### 3. CSES - Sum of Divisors
+### 3. [CSES Sum of Divisors](https://cses.fi/problemset/task/1082)
 **Concept:** Calculate $\sum_{i=1}^n \sigma(i)$ modulo $10^9+7$, where $\sigma(i)$ is the sum of divisors of $i$. $N$ can be up to $10^{12}$.
 **Idea:** Writing out the sum reveals that the term $i$ appears exactly $\lfloor \frac{n}{i} \rfloor$ times. 
 So, the total sum is equal to: $\sum_{i=1}^n i \times \lfloor \frac{n}{i} \rfloor$.

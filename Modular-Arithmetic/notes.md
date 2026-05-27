@@ -80,18 +80,18 @@ long long modInverse(long long n, long long mod) {
 
 ## Problem Explanations (CSES)
 
-### 1. CSES - Exponentiation
+### 1. [CSES Exponentiation](https://cses.fi/problemset/task/1095)
 **Problem:** Calculate $a^b \pmod{10^9+7}$ for up to $10^5$ test cases. $a, b \le 10^9$.
 **Explanation:** This is a direct application of Binary Exponentiation. By breaking $b$ down into its binary representation, we can compute the result in $O(\log b)$ time, easily passing the time limit.
 
-### 2. CSES - Exponentiation II
+### 2. [CSES Exponentiation II](https://cses.fi/problemset/task/1712)
 **Problem:** Calculate $a^{b^c} \pmod{10^9+7}$.
 **Explanation:** By Fermat's Little Theorem, we know that $a^{p-1} \equiv 1 \pmod p$ for a prime $p$.
 Because of this cyclic nature, the exponent itself repeats every $p-1$ times.
 Therefore, $a^{b^c} \pmod p \equiv a^{(b^c \pmod{p-1})} \pmod p$.
 Since $p = 10^9+7$, we first calculate $X = b^c \pmod{10^9+6}$. Then we calculate $a^X \pmod{10^9+7}$.
 
-### 3. CSES - Binomial Coefficients
+### 3. [CSES Binomial Coefficients](https://cses.fi/problemset/task/1079)
 **Problem:** Calculate $nCr \pmod{10^9+7}$ for $10^5$ queries, where $n \le 10^6$.
 **Explanation:** We know $nCr = \frac{n!}{r!(n-r)!}$. Since we have many queries, computing factorials each time is too slow.
 Instead, we precompute:

@@ -1,7 +1,5 @@
 #include <iostream>
-
 using namespace std;
-
 const long long MOD = 1e9 + 7;
 
 long long power(long long base, long long exp) {

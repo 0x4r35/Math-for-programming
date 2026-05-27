@@ -54,7 +54,7 @@ If the exponent is given as an astronomically large string (e.g., $10^{100000}$ 
 
 ## Related Problems in this Directory
 
-### 1. LeetCode 1922: Count Good Numbers
+### 1. [LeetCode 1922: Count Good Numbers](https://leetcode.com/problems/count-good-numbers/)
 **Concept:** A digit string is "good" if digits at even indices are even (0, 2, 4, 6, 8) and digits at odd indices are prime (2, 3, 5, 7).
 **Explanation:** 
 For a string of length $n$:
@@ -64,7 +64,7 @@ For a string of length $n$:
 The total number of good strings is $5^{\lceil n/2 \rceil} \times 4^{\lfloor n/2 \rfloor} \pmod{10^9+7}$.
 Because $n$ can be up to $10^{15}$, an $O(n)$ loop will Time Limit Exceed (TLE). We must use **Binary Fast Exponentiation** to calculate these large powers in $O(\log n)$ time.
 
-### 2. SPOJ LOCKER - Magic of the Locker
+### 2. [SPOJ LOCKER - Magic of the Locker](https://www.spoj.com/problems/LOCKER/)
 **Concept:** You are given a number $N$ and need to break it into a sum of positive integers such that their product is maximized.
 **Explanation:** 
 This relies on a well-known mathematical trick: breaking a number into as many `3`s as possible yields the absolutely largest product. We check $N \pmod 3$:
